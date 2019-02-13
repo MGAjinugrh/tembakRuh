@@ -230,7 +230,7 @@ class Player(pygame.sprite.Sprite):
                 all_sprites.add(bullet)
                 bullets.add(bullet)
                 shooting_sound.play()
-                self.shoot_delay = 600
+                self.shoot_delay = 450
             if self.power == 2:
                 bullet1 = Bullet(self.rect.left, self.rect.centery)
                 bullet2 = Bullet(self.rect.right, self.rect.centery)
@@ -239,7 +239,7 @@ class Player(pygame.sprite.Sprite):
                 bullets.add(bullet1)
                 bullets.add(bullet2)
                 shooting_sound.play()
-                self.shoot_delay = 350
+                self.shoot_delay = 250
 
             """ MOAR POWAH """
             if self.power >= 3:
@@ -254,7 +254,7 @@ class Player(pygame.sprite.Sprite):
                 bullets.add(missile1)
                 shooting_sound.play()
                 missile_sound.play()
-                self.shoot_delay = 100
+                self.shoot_delay = 150
 
     def powerup(self):
         self.power += 1
