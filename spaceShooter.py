@@ -86,7 +86,7 @@ def main_menu():
     #ready = pygame.mixer.Sound(path.join(sound_folder,'getready.ogg'))
     #ready.play()
     screen.fill(BLACK)
-    draw_text(screen, "KALAHKAN BOS ALIEN!", 40, WIDTH/2, HEIGHT/2)
+    draw_text(screen, "HABISI SEMUA ALIEN!", 40, WIDTH/2, HEIGHT/2)
     pygame.display.update()
     
 
@@ -230,7 +230,7 @@ class Player(pygame.sprite.Sprite):
                 all_sprites.add(bullet)
                 bullets.add(bullet)
                 shooting_sound.play()
-                self.shoot_delay = 400
+                self.shoot_delay = 600
             if self.power == 2:
                 bullet1 = Bullet(self.rect.left, self.rect.centery)
                 bullet2 = Bullet(self.rect.right, self.rect.centery)
@@ -239,7 +239,7 @@ class Player(pygame.sprite.Sprite):
                 bullets.add(bullet1)
                 bullets.add(bullet2)
                 shooting_sound.play()
-                self.shoot_delay = 250
+                self.shoot_delay = 350
 
             """ MOAR POWAH """
             if self.power >= 3:
@@ -276,7 +276,7 @@ class Mob(pygame.sprite.Sprite):
         self.radius = int(self.rect.width *.90 / 2)
         self.rect.x = random.randrange(0, WIDTH - self.rect.width)
         self.rect.y = random.randrange(-150, -100)
-        self.speedy = random.randrange(1, 2)        ## for randomizing the speed of the Mob
+        self.speedy = random.randrange(5, 20)        ## for randomizing the speed of the Mob
 
         ## randomize the movements a little more 
         self.speedx = random.randrange(-3, 3)
@@ -306,7 +306,7 @@ class Mob(pygame.sprite.Sprite):
         if (self.rect.top > HEIGHT + 10) or (self.rect.left < -25) or (self.rect.right > WIDTH + 20):
             self.rect.x = random.randrange(0, WIDTH - self.rect.width)
             self.rect.y = random.randrange(-100, -40)
-            self.speedy = random.randrange(1, 8)        ## for randomizing the speed of the Mob
+            self.speedy = random.randrange(5, 20)        ## for randomizing the speed of the Mob
 
 # # defines the boss
 # class Bos(pygame.sprite.Sprite):
